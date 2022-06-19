@@ -13,7 +13,7 @@ class Nav extends Component {
         />
         <img
           align="right"
-          src={require("../images/ab.jpg")}
+          src={require("../images/abc.jpg")}
           alt=""
           height={182}
           width={182}
