@@ -19,9 +19,6 @@ class SpellCheck extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    this.setState({ errorMessage: "" });
-    this.setState({ isSubmitted: true });
-
     var words = this.state.input.trim().split(/\s+/).join("|");
 
     // const apiUrl = `http://localhost:8080/checkwords/${words}`;
@@ -32,9 +29,13 @@ class SpellCheck extends Component {
       .then((data) => {
         console.log(data);
         if (Object.keys(data).length > 0) {
+          this.setState({ isSubmitted: true });
           this.setState({
             errorMessage: `Non-English words: ${data.join(", ")}`,
           });
+        } else {
+          this.setState({ isSubmitted: true });
+          this.setState({ errorMessage: "" });
         }
       })
       .catch((err) => {
