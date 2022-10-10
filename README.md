@@ -31,7 +31,7 @@ If you prefer to test backend api, please follow below steps.
 	- https://spell-checker-backend.vercel.app/checkwords/xyz|DOG|ABCD => xyz, ABCD
 
 ### Run locally
-
-To run locally, In visual studio code, go to the sub folder (backend or frotnend) and run `npm run start`
-	- Frontend: http://localhost:3000/
-	- Backend: http://127.0.0.1:8080/checkwords/xyz
+ 
+To run locally, In visual studio code, go to the sub folder (backend or frotnend) and run `npm run start` :
+- Frontend: http://localhost:3000/
+- Backend: http://127.0.0.1:8080/checkwords/xyz
