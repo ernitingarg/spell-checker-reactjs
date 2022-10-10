@@ -22,7 +22,7 @@ class SpellCheck extends Component {
     var words = this.state.input.trim().split(/\s+/).join("|");
 
     // const apiUrl = `http://localhost:8080/checkwords/${words}`;
-    const apiUrl = `https://spell-checker.azurewebsites.net/checkwords/${words}`;
+    const apiUrl = `https://spell-checker-backend.vercel.app/checkwords/${words}`;
 
     fetch(apiUrl)
       .then((response) => response.json())
