@@ -8,6 +8,10 @@ Spell-checker is a simple application which has mainly 2 components:
 
 For this application to use, please enter any sentense and this application shows all words which are `NOT` English words.
 
+![Wrong](./images/wrong.png)
+
+
+![Correct](./images/correct.png)
 
 ### Backend API
 
