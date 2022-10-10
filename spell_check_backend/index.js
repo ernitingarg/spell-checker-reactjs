@@ -26,9 +26,6 @@ function checkExistence(words) {
   const filePath = path.join(__dirname, "master.txt");
   let content = fs.readFileSync(filePath, "utf8");
 
-  // lowercase the data to ignore case.
-  content = content.toLowerCase();
-
   for (let word of words) {
     word = word.trim();
 
@@ -38,12 +35,10 @@ function checkExistence(words) {
     }
 
     // prepare the patter for word to be searched.
-    var pattern = new RegExp("\r\n" + word.trim().toLowerCase() + "\r\n");
-    if (!pattern.test(content)) {
-      if (notFound.indexOf(word) == -1) {
-        notFound.push(word);
-      }
-    }
+    // i: Ignore case
+    // m: Multi line
+    if (!content.toString().match(new RegExp(`^${word}$`, "mi")))
+      notFound.push(word);
   }
 
   return notFound;
