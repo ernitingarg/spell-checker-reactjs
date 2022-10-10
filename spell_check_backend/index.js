@@ -2,6 +2,7 @@ const app = require("express")();
 const fs = require("fs");
 var cors = require("cors");
 const PORT = 8080;
+const path = require("path");
 
 app.use(cors());
 app.get("/checkwords/:words", (req, res) => {
@@ -22,7 +23,8 @@ function checkExistence(words) {
   var notFound = [];
 
   // read file
-  let content = fs.readFileSync("master.txt", "utf8");
+  const filePath = path.join(__dirname, "master.txt");
+  let content = fs.readFileSync(filePath, "utf8");
 
   // lowercase the data to ignore case.
   content = content.toLowerCase();
